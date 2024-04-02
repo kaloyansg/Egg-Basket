@@ -7,7 +7,7 @@
 void report(const Basket& basket)
 {
 	char* fileName = new char[12 + strlen(basket.getName())];
-	strcpy(fileName, "reprt_");
+	strcpy(fileName, "report_");
 	strcat(fileName, basket.getName());
 	strcat(fileName, ".txt");
 

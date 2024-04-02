@@ -1,0 +1,4 @@
+Stavri:
+ostrich - 6
+chiken - 3
+dinosaur - 10

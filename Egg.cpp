@@ -101,7 +101,7 @@ void Egg::getFromBinary(std::ifstream& file)
 	if (!file)
 		return;
 	file.read(reinterpret_cast<char*>(this), sizeof(Egg));
-	this->setName(tempName);
+	this->name = tempName;
 	id = idRecord;
 	++idRecord;
 }

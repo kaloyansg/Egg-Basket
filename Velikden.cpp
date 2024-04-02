@@ -1,6 +1,25 @@
 #include <iostream>
+#include <fstream>
 #include "Egg.h"
 #include "Basket.h"
+#pragma warning (disable:4996)
+
+void report(const Basket& basket)
+{
+	char* fileName = new char[12 + strlen(basket.getName())];
+	strcpy(fileName, "reprt_");
+	strcat(fileName, basket.getName());
+	strcat(fileName, ".txt");
+
+	std::ofstream file(fileName);
+	file << basket.getName() << ":" << '\n';
+	size_t size = basket.getSize();
+	for (size_t i = 0; i < size; ++i)
+	{
+		file << basket[i].getName() << " - " << basket[i].getSize() << '\n';
+	}
+	file.close();
+}
 
 int main()
 {
@@ -23,4 +42,6 @@ int main()
 	{
 		std::cout << b2[i].getName() << " ";
 	}
+
+	report(b2);
 }
